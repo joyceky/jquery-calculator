@@ -35,7 +35,7 @@ function getClickedButton(){
         evaluate();
       }
       else{
-        calcString += target.text() + ' ';
+        calcString += target.text();
         $('#screen').text(calcString);
         }
       }});
@@ -47,14 +47,13 @@ function buttonClear() {
       }
 
 function evaluate() {
-  calcString = eval(calcString);
-  $('#screen').text(calcString);
+  // var prevCalcString = calcString;
+  // console.log(prevCalcString);
+  // if(isNaN(calcString)) {
+  //   $('#screen').text('ERROR');
+  // }
+  //  else {
+    calcString = eval(calcString);
+    calcString = calcString.toFixed(2);
+   $('#screen').text(calcString);
 }
-
-// function writeToScreen() {
-// //when the user clicks inside of the button containers,
-// // log the inner text of the button to the screen
-// $('#screen').on('click', function(event) {
-//     event.currentTarget.innerText = clickedButton;
-// });
-// }
